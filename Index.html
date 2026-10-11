@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Puretato Flour - Potato flour in 50 kg bags</title>
+<meta name="description" content="Puretato Flour supplies white fine and wholemeal potato flour in 50 kg bags to food and food packaging businesses in Kaduna.">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#EEF4F1;--panel:#fff;--ink:#12332F;--soft:#4C6762;--line:#CFDDD7;--green:#2C7A68;--amber:#E5A63A}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 Inter,system-ui,sans-serif}
+h1,h2,h3{font-family:Outfit,system-ui,sans-serif;line-height:1.1;margin:0}
+:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+.wrap{max-width:1020px;margin:0 auto;padding:0 20px}
+header{display:flex;justify-content:space-between;align-items:center;padding:18px 0;gap:12px;flex-wrap:wrap}
+.logo{font:700 24px Outfit,sans-serif;text-decoration:none;color:var(--ink)}
+nav{display:flex;gap:20px;font-weight:500}
+nav a{color:var(--soft);text-decoration:none}
+nav a:hover{color:var(--ink)}
+.hero{padding:44px 0 64px;max-width:760px}
+.hero h1{font-size:clamp(38px,7vw,68px);font-weight:700;letter-spacing:-.02em}
+.hero p{color:var(--soft);font-size:19px;margin:20px 0 28px;max-width:50ch}
+.btn{display:inline-block;background:var(--amber);color:#2A1D05;font:600 17px Outfit,sans-serif;padding:14px 26px;border-radius:10px;border:0;text-decoration:none;cursor:pointer}
+.btn:hover{filter:brightness(1.07)}
+.btn.alt{background:none;border:2px solid var(--line);color:var(--ink);margin-left:8px}
+section{padding:56px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(28px,4vw,40px);margin-bottom:10px}
+.lead{color:var(--soft);margin:0 0 28px;max-width:58ch}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;max-width:760px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px}
+.card h3{font-size:22px;margin-bottom:6px}
+.card p{margin:0 0 12px;color:var(--soft);font-size:16px}
+.price{font:700 30px Outfit,sans-serif;color:var(--green)}
+.price small{font:400 14px Inter;color:var(--soft)}
+.batch{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px;margin-bottom:14px;max-width:760px}
+.batch .top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:6px}
+.batch b{font:600 19px Outfit}
+.now{font:600 22px Outfit;color:var(--green);margin:0 0 12px}
+.bar{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.bar div{font-size:14px;text-align:center;padding-top:8px;border-top:8px solid var(--line);color:var(--soft)}
+.bar .done{border-color:var(--green);color:var(--ink)}
+.bar .cur{border-color:var(--amber);color:var(--ink);font-weight:600}
+.legend{max-width:760px;margin:28px 0 0;padding:0;list-style:none;display:grid;gap:8px;color:var(--soft)}
+.legend b{color:var(--ink)}
+form{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:720px}
+label{display:grid;gap:6px;font-weight:500;font-size:15px}
+.full{grid-column:1/-1}
+input,select{font:inherit;padding:12px;border:2px solid var(--line);border-radius:10px;background:var(--panel);color:var(--ink);width:100%}
+.total{font:600 20px Outfit}
+.note{color:var(--soft);font-size:15px}
+footer{padding:32px 0;border-top:1px solid var(--line);color:var(--soft);font-size:15px}
+@media(max-width:700px){.grid,form{grid-template-columns:1fr}nav{gap:14px;font-size:15px}.btn.alt{margin:10px 0 0}.bar div{font-size:12.5px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <a class="logo" href="#">Puretato Flour</a>
+  <nav><a href="#prices">Prices</a><a href="#track">Tracking</a><a href="#book">Book</a><a href="#how">How it works</a><a href="#contact">Contact</a></nav>
+</header>
+<div class="hero">
+  <h1>Pure potato flour in 50 kg bags for your business.</h1>
+  <p>We supply food makers and food packaging businesses. See today's prices, book your bags, and follow your batch while it is being made.</p>
+  <a class="btn" href="#book">Book bags</a><a class="btn alt" href="#track">Track a batch</a>
+</div>
+</div>
+
+<section id="prices"><div class="wrap">
+  <h2>Prices</h2>
+  <p class="lead" id="priceNote"></p>
+  <div class="grid" id="priceGrid"></div>
+</div></section>
+
+<section id="track"><div class="wrap">
+  <h2>Where is my batch?</h2>
+  <p class="lead">Each batch goes through four steps. The amber bar and the green line show the step it is on today.</p>
+  <div id="batches"></div>
+  <ul class="legend">
+    <li><b>1. Washing and slicing:</b> the potatoes are cleaned and cut into thin slices.</li>
+    <li><b>2. Soaking:</b> the slices are soaked to keep them clean and white.</li>
+    <li><b>3. Drying:</b> the slices are dried until no moisture is left, then milled into flour.</li>
+    <li><b>4. Ready for pickup:</b> the bags are packed and waiting for you.</li>
+  </ul>
+</div></section>
+
+<section id="book"><div class="wrap">
+  <h2>Book your bags</h2>
+  <p class="lead">Fill in the form and press the button. It opens WhatsApp with your booking ready to send to us. We will reply to confirm.</p>
+  <form id="bookForm">
+    <label>Business name<input name="biz" required autocomplete="organization"></label>
+    <label>Contact address<input name="addr" required autocomplete="street-address"></label>
+    <label>Phone number<input name="phone" type="tel" required autocomplete="tel"></label>
+    <label>Number of 50 kg bags<input name="qty" id="qty" type="number" min="1" value="10" required></label>
+    <label class="full">Flour type<select name="grade" id="gradeSel"></select></label>
+    <div class="full total" id="total"></div>
+    <div class="full"><button class="btn" type="submit">Send booking on WhatsApp</button></div>
+  </form>
+</div></section>
+
+<section id="how"><div class="wrap">
+  <h2>How ordering works</h2>
+  <ul class="legend">
+    <li><b>1. Book:</b> send your booking on WhatsApp.</li>
+    <li><b>2. Wait for our reply:</b> we confirm and send you our account details. Please do not send any money until you receive them from us.</li>
+    <li><b>3. Delivery time:</b> counting from the day we buy the fresh potatoes, expect your flour in 14 to 18 days.</li>
+  </ul>
+</div></section>
+
+<section id="contact"><div class="wrap">
+  <h2>Contact</h2>
+  <p class="lead">
+    Monday to Saturday: 8:00 am to 7:00 pm<br>
+    Sunday: 11:00 am to 7:00 pm<br>
+    Phone: <a href="tel:+2348165609853">+234 816 560 9853</a><br>
+    Factory address: No 20 Shekwagah Street, Mani, Kaduna State.
+  </p>
+</div></section>
+
+<footer><div class="wrap">&copy; Puretato Flour. All rights reserved.</div></footer>
+
+<script>
+var STAGES=["Washing and slicing","Soaking","Drying","Ready for pickup"];
+var WHATSAPP="2348165609853";
+var data={note:"Prices are per 50 kg bag and may change with potato supply.",
+ prices:[{name:"White fine flour",desc:"For swallow, baking and everyday cooking.",price:45000},
+         {name:"Wholemeal flour",desc:"Milled with the skin for a deeper taste and more fibre.",price:41000}],
+ batches:[{code:"PT-001",product:"White fine flour",stage:1},{code:"PT-002",product:"Wholemeal flour",stage:0}]};
+var $=function(i){return document.getElementById(i)};
+function money(n){return "\u20A6"+Number(n).toLocaleString("en-NG")}
+function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
+
+function total(){
+  var p=data.prices.filter(function(x){return x.name===$("gradeSel").value})[0],q=Number($("qty").value)||0;
+  $("total").textContent=p?"Estimated total: "+money(p.price*q):"";
+}
+function render(){
+  $("priceNote").textContent=data.note;
+  var g=$("priceGrid");g.textContent="";
+  data.prices.forEach(function(p){
+    var c=el("div","card");c.appendChild(el("h3",0,p.name));c.appendChild(el("p",0,p.desc));
+    var pr=el("div","price",money(p.price));pr.appendChild(el("small",0," per 50 kg bag"));c.appendChild(pr);g.appendChild(c)});
+  var s=$("gradeSel"),keep=s.value;s.textContent="";
+  data.prices.forEach(function(p){var o=el("option",0,p.name);o.value=p.name;s.appendChild(o)});
+  if(keep)s.value=keep;
+  var b=$("batches");b.textContent="";
+  if(!data.batches.length)b.appendChild(el("p","note","No batches are in progress right now."));
+  data.batches.forEach(function(x){
+    var c=el("div","batch"),t=el("div","top");
+    t.appendChild(el("b",0,"Batch "+x.code));t.appendChild(el("span","note",x.product));c.appendChild(t);
+    c.appendChild(el("p","now",x.stage>=3?"Ready for pickup":"Now: "+STAGES[x.stage]+" (step "+(x.stage+1)+" of 4)"));
+    var bar=el("div","bar");
+    STAGES.forEach(function(n,i){bar.appendChild(el("div",i<x.stage?"done":i==x.stage?"cur":"",n))});
+    c.appendChild(bar);b.appendChild(c)});
+  total();
+}
+$("gradeSel").onchange=total;$("qty").oninput=total;
+
+$("bookForm").addEventListener("submit",function(e){
+  e.preventDefault();
+  var d=Object.fromEntries(new FormData(this).entries());
+  var p=data.prices.filter(function(x){return x.name===d.grade})[0];
+  var msg="New booking - Puretato Flour\nBusiness: "+d.biz+"\nContact address: "+d.addr+"\nPhone: "+d.phone+
+    "\nFlour: "+d.grade+"\nBags (50 kg): "+d.qty+(p?"\nEstimated total: "+money(p.price*d.qty):"");
+  window.open("https://wa.me/"+WHATSAPP+"?text="+encodeURIComponent(msg),"_blank");
+});
+
+render();
+fetch("data.json?v="+Date.now()).then(function(r){return r.json()}).then(function(j){data=j;render()}).catch(function(){});
+</script>
+</body>
+</html>
