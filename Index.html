@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Puretato Flour - Potato flour in 50 kg bags</title>
-<meta name="description" content="Puretato Flour supplies white fine and wholemeal potato flour in 50 kg bags to food and food packaging businesses in Kaduna.">
+<title>Puretato Flour - Potato flour in 23-25 kg bag</title>
+<meta name="description" content="Puretato Flour supplies white fine and wholemeal potato flour in 23-25 kg bags to food and food packaging businesses in Kaduna State and other States.">
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#EEF4F1;--panel:#fff;--ink:#12332F;--soft:#4C6762;--line:#CFDDD7;--green:#2C7A68;--amber:#E5A63A}
@@ -61,7 +61,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);color:var(--soft);font-si
   <nav><a href="#prices">Prices</a><a href="#track">Tracking</a><a href="#book">Book</a><a href="#how">How it works</a><a href="#contact">Contact</a></nav>
 </header>
 <div class="hero">
-  <h1>Pure potato flour in 50 kg bags for your business.</h1>
+  <h1>Pure potato flour in 23-25 kg bags for your business.</h1>
   <p>We supply food makers and food packaging businesses. See today's prices, book your bags, and follow your batch while it is being made.</p>
   <a class="btn" href="#book">Book bags</a><a class="btn alt" href="#track">Track a batch</a>
 </div>
@@ -92,7 +92,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);color:var(--soft);font-si
     <label>Business name<input name="biz" required autocomplete="organization"></label>
     <label>Contact address<input name="addr" required autocomplete="street-address"></label>
     <label>Phone number<input name="phone" type="tel" required autocomplete="tel"></label>
-    <label>Number of 50 kg bags<input name="qty" id="qty" type="number" min="1" value="10" required></label>
+    <label>Number of 23-25 kg bags<input name="qty" id="qty" type="number" min="1" value="10" required></label>
     <label class="full">Flour type<select name="grade" id="gradeSel"></select></label>
     <div class="full total" id="total"></div>
     <div class="full"><button class="btn" type="submit">Send booking on WhatsApp</button></div>
@@ -123,9 +123,9 @@ footer{padding:32px 0;border-top:1px solid var(--line);color:var(--soft);font-si
 <script>
 var STAGES=["Washing and slicing","Soaking","Drying","Ready for pickup"];
 var WHATSAPP="2348165609853";
-var data={note:"Prices are per 50 kg bag and may change with potato supply.",
- prices:[{name:"White fine flour",desc:"For swallow, baking and everyday cooking.",price:45000},
-         {name:"Wholemeal flour",desc:"Milled with the skin for a deeper taste and more fibre.",price:41000}],
+var data={note:"Prices are per 23-25 kg bag and may change with potato supply.",
+ prices:[{name:"White fine flour",desc:"For swallow, baking and everyday cooking.",price:60000},
+         {name:"Wholemeal flour",desc:"Milled with the skin for a deeper taste and more fibre.",price:56000}],
  batches:[{code:"PT-001",product:"White fine flour",stage:1},{code:"PT-002",product:"Wholemeal flour",stage:0}]};
 var $=function(i){return document.getElementById(i)};
 function money(n){return "\u20A6"+Number(n).toLocaleString("en-NG")}
@@ -162,7 +162,7 @@ $("bookForm").addEventListener("submit",function(e){
   var d=Object.fromEntries(new FormData(this).entries());
   var p=data.prices.filter(function(x){return x.name===d.grade})[0];
   var msg="New booking - Puretato Flour\nBusiness: "+d.biz+"\nContact address: "+d.addr+"\nPhone: "+d.phone+
-    "\nFlour: "+d.grade+"\nBags (50 kg): "+d.qty+(p?"\nEstimated total: "+money(p.price*d.qty):"");
+    "\nFlour: "+d.grade+"\nBags (23-25 kg): "+d.qty+(p?"\nEstimated total: "+money(p.price*d.qty):"");
   window.open("https://wa.me/"+WHATSAPP+"?text="+encodeURIComponent(msg),"_blank");
 });
 
