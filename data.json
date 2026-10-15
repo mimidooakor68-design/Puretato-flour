@@ -1,8 +1,8 @@
 {
-  "note": "Prices are per 50 kg bag and may change with potato supply.",
+  "note": "Prices are per 23-25 kg bag and may change with potato supply.",
   "prices": [
-    {"name": "White fine flour", "desc": "For swallow, baking and everyday cooking.", "price": 45000},
-    {"name": "Wholemeal flour", "desc": "Milled with the skin for a deeper taste and more fibre.", "price": 41000}
+    {"name": "White fine flour", "desc": "For swallow, baking and everyday cooking.", "price": 60000},
+    {"name": "Wholemeal flour", "desc": "Milled with the skin for a deeper taste and more fibre.", "price": 56000}
   ],
   "batches": [
     {"code": "PT-001", "product": "White fine flour", "stage": 1},
